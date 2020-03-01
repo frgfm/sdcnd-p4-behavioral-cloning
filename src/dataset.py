@@ -26,7 +26,6 @@ class DataLoader(Sequence):
     """
     def __init__(self, root, samples, batch_size=32, vrange=slice(70, -20), spatial_shape=(64, 64), n_channels=3,
                  shuffle=True, transform_fn=None):
-        'Initialization'
         self.root = root
         self.spatial_shape = spatial_shape
         self.batch_size = batch_size
@@ -38,11 +37,11 @@ class DataLoader(Sequence):
         self.on_epoch_end()
 
     def __len__(self):
-        'Denotes the number of batches per epoch'
+        """Denotes the number of batches per epoch"""
         return int(np.floor(len(self.data) / self.batch_size))
 
     def __getitem__(self, index):
-        'Generate one batch of data'
+        """Generate one batch of data"""
         # Generate indexes of the batch
         indexes = self.indexes[index * self.batch_size: (index + 1) * self.batch_size]
 
@@ -55,7 +54,7 @@ class DataLoader(Sequence):
         return X, y
 
     def on_epoch_end(self):
-        'Updates indexes after each epoch'
+        """Updates indexes after each epoch"""
         self.indexes = np.arange(len(self.data))
         if self.shuffle:
             np.random.shuffle(self.indexes)
@@ -112,7 +111,7 @@ def shadow(X, y):
     """
 
     if X.ndim != 4:
-        raise AssertionError(f"expected `X` to be 4-dimensional")
+        raise AssertionError("expected `X` to be 4-dimensional")
 
     for _idx in range(X.shape[0]):
         X[_idx, ...] = _shadow(X[_idx, ...])
@@ -130,7 +129,7 @@ def _shadow(X):
     """
 
     if X.ndim != 3:
-        raise AssertionError(f"expected `X` to be 4-dimensional")
+        raise AssertionError("expected `X` to be 4-dimensional")
 
     intercepts = np.random.choice(X.shape[1], 2, replace=False)
     slopes = X.shape[1] / (intercepts[1] - intercepts[0])

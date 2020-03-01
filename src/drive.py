@@ -9,7 +9,6 @@ import argparse
 import base64
 from datetime import datetime
 import os
-import shutil
 from pathlib import Path
 
 import cv2
@@ -26,8 +25,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
 physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
-
-from tensorflow.keras.models import load_model
 
 import models
 
