@@ -234,11 +234,11 @@ In order to tackle this, we will simply introduce a probability $p$ of taking 0Â
 
 
 
-|                           | Left camera                                                  | Center camera                                                | Right camera                                                 |
-| ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Original image            | ![left_raw](static/images/left_raw.jpg)                      | ![center_raw](static/images/center_raw.jpg)                  | ![right_raw](static/images/right_raw.jpg)                    |
-| Cropped and resized image | ![left_processed](/home/fg/Documents/Udacity/sdcnd-p4-behavioral-cloning/static/images/left_processed.png) | ![center_processed](static/images/center_processed.png)      | ![right_processed](/home/fg/Documents/Udacity/sdcnd-p4-behavioral-cloning/static/images/right_processed.png) |
-| Augmented image           | ![left_augmented](/home/fg/Documents/Udacity/sdcnd-p4-behavioral-cloning/static/images/left_augmented.png) | ![center_augmented](/home/fg/Documents/Udacity/sdcnd-p4-behavioral-cloning/static/images/center_augmented.png) | ![right_augmented](/home/fg/Documents/Udacity/sdcnd-p4-behavioral-cloning/static/images/right_augmented.png) |
+|                           | Left camera                                         | Center camera                                           | Right camera                                          |
+| ------------------------- | --------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| Original image            | ![left_raw](static/images/left_raw.jpg)             | ![center_raw](static/images/center_raw.jpg)             | ![right_raw](static/images/right_raw.jpg)             |
+| Cropped and resized image | ![left_processed](static/images/left_processed.png) | ![center_processed](static/images/center_processed.png) | ![right_processed](static/images/right_processed.png) |
+| Augmented image           | ![left_augmented](static/images/left_augmented.png) | ![center_augmented](static/images/center_augmented.png) | ![right_augmented](static/images/right_augmented.png) |
 
 
 
