@@ -90,7 +90,7 @@ if __name__ == '__main__':
     parser.add_argument("--output", type=str, default='model.h5', help="Path where trained model will be saved")
     parser.add_argument("--correction", type=float, default=0.25, help="Default steering correction")
     parser.add_argument("--dropout", type=float, default=0., help="Dropout probability")
-    parser.add_argument("--resampling", type=float, default=None,
+    parser.add_argument("--resampling", type=float, default=0.5,
                         help="Probability of keeping samples equals to mode")
 
     args = parser.parse_args()

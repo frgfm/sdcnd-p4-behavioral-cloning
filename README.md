@@ -94,8 +94,8 @@ A training script is available to train the steering angle regressor on the trai
 ```
 usage: train.py [-h] [--arch ARCH] [--folder FOLDER] [--batch-size BATCH_SIZE]
                 [--lr LR] [--size SIZE] [--output OUTPUT]
-                [--correction CORRECTION] [--resampling]
-                [--resampling-prob RESAMPLING_PROB]
+                [--correction CORRECTION] [--dropout DROPOUT]
+                [--resampling RESAMPLING]
                 epochs
 
 Driving behavior cloning training
@@ -105,25 +105,25 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --arch ARCH           Model architecture (default: lenet5)
+  --arch ARCH           Model architecture (default: babypilot)
   --folder FOLDER       Path to data folder (default: ./data)
   --batch-size BATCH_SIZE
                         Batch size (default: 32)
-  --lr LR               Learning rate (default: 0.001)
+  --lr LR               Learning rate (default: 0.0005)
   --size SIZE           Image resizing (default: 64)
   --output OUTPUT       Path where trained model will be saved (default:
                         model.h5)
   --correction CORRECTION
                         Default steering correction (default: 0.25)
-  --resampling          Resample distribution to balance it (default: False)
-  --resampling-prob RESAMPLING_PROB
+  --dropout DROPOUT     Dropout probability (default: 0.0)
+  --resampling RESAMPLING
                         Probability of keeping samples equals to mode
                         (default: 0.5)
 ```
 
 The training script includes a Tensorboard callback. You can access your live training information by running tensorboard:
 
-```
+```bash
 tensorboard --logdir=logs --port=6007
 ```
 
@@ -136,7 +136,8 @@ and navigate in your browser to http://localhost:6007/.
 An inference script is available for you to test out your trained model or the one from the release on your environment build.
 
 ```
-usage: drive.py [-h] [--arch ARCH] [--speed SPEED] [--img-folder [IMG_FOLDER]]
+usage: drive.py [-h] [--arch ARCH] [--size SIZE] [--speed SPEED]
+                [--img-folder [IMG_FOLDER]]
                 model
 
 Autonomous driving simulation
@@ -147,12 +148,12 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --arch ARCH           Architecture used for simulation. (default: lenet5)
+  --arch ARCH           Architecture used for simulation. (default: babypilot)
+  --size SIZE           Image resizing (default: 64)
   --speed SPEED         Max allowed speed. (default: 30)
   --img-folder [IMG_FOLDER]
                         Path to image folder. This is where the images from
                         the run will be saved. (default: None)
-
 ```
 
 
@@ -287,7 +288,7 @@ By using the previous observations and assumptions, we implement our final model
 
 
 
-```shell
+```
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
