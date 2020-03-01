@@ -82,10 +82,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Driving behavior cloning training',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("epochs", type=int, help="Number of epochs to train")
-    parser.add_argument("--arch", type=str, default='lenet5', help="Model architecture")
+    parser.add_argument("--arch", type=str, default='babypilot', help="Model architecture")
     parser.add_argument("--folder", type=str, default='./data', help="Path to data folder")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size")
-    parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=5e-4, help="Learning rate")
     parser.add_argument("--size", type=int, default=64, help="Image resizing")
     parser.add_argument("--output", type=str, default='model.h5', help="Path where trained model will be saved")
     parser.add_argument("--correction", type=float, default=0.25, help="Default steering correction")
