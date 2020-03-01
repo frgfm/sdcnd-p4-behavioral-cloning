@@ -29,6 +29,7 @@ class Tester(unittest.TestCase):
     def _test_model(self, arch, input_shape=(64, 64, 3), dtype=np.float32):
 
         model = models.__dict__[arch](input_shape=input_shape)
+        self.assertIsInstance(model, Sequential)
 
         input_t = get_input(input_shape, dtype=dtype)
         angle = model.predict(input_t[None, ...], batch_size=1)[0]
