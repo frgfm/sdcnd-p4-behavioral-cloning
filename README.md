@@ -4,7 +4,10 @@
 
 This repository is an implementation of a simulated driving behavior for the behavioral cloning project of Udacity Self-Driving Car Nanodegree (cf. [repo](<https://github.com/udacity/CarND-Behavioral-Cloning-P3>)).
 
-![autonomous_run](static/images/autonomous_01_short.gif)
+
+<p align="center">
+  <img src="https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_short.gif">
+</p>
 
 
 
