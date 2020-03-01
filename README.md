@@ -6,7 +6,7 @@ This repository is an implementation of a simulated driving behavior for the beh
 
 
 <p align="center">
-  <img src="https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_short.gif">
+  <img src="static/images/autonomous_01_short.gif">
 </p>
 
 
