@@ -380,7 +380,7 @@ During tests in autonomous mode, a few issues were spotted:
 - track recovery: when putting the car already outside of the track, the model is rarely able to recover even in close proximity.
 - graphics overfitting: this one is a very interesting lead for augmentation. For report render purposes, different graphics and resolution were tested with the trained model. While the resolution does not change much (because of resizing), the graphics settings influence a lot the performances.
 
-![graphics_fail](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_graphicsfail.gif)
+![graphics_fail](static/images/autonomous_01_graphicsfail.gif)
 
 Since the provided dataset seemed to have been recorded on `Graphics Quality: Fastest`, best performances are obtained when evaluating in the same mode. Apparent failures appear very quickly if you were to use `Graphics Quality: Fanstastic` instead as shown above. Knowing this, while driving the simulator, it would be interesting to record for each cameras the renders in different graphics settings.
 
