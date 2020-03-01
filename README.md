@@ -4,7 +4,10 @@
 
 This repository is an implementation of a simulated driving behavior for the behavioral cloning project of Udacity Self-Driving Car Nanodegree (cf. [repo](<https://github.com/udacity/CarND-Behavioral-Cloning-P3>)).
 
-![autonomous_run](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_short.gif)
+
+<p align="center">
+  <img src="static/images/autonomous_01_short.gif">
+</p>
 
 
 
@@ -176,9 +179,9 @@ Instead of having a perfect driving behavior in our dataset, the user controls t
 
 This Unity environment offers a car driving experience on two tracks with two available modes. 
 
-| Track 01                                                     | Track 02                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![track_01](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/track_01.gif) | ![track_02](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/track_02.gif) |
+| Track 01                                | Track 02                                |
+| --------------------------------------- | --------------------------------------- |
+| ![track_01](static/images/track_01.gif) | ![track_02](static/images/track_02.gif) |
 
 The training mode lets the user explore the environment and record its driving data for later training. The autonomous mode lets the developer plug in a flask app with a model that would handle the car controls.
 
@@ -358,7 +361,7 @@ The MSE loss curves show a good generalization capacity of the model, without an
 
 The trained [model](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/model.h5) is able to drive around the first track without any issue (Resolution: `800 x 600`, Graphics Quality: `Fastest` ) especially after removing 50% of the 0° steering angle in the training phase.
 
-![autonomous_run](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_short.gif)
+![autonomous_run](static/images/autonomous_01_short.gif)
 
 Full-length lap recordings are available in first-person and third-person view in the release attachments:
 
@@ -377,7 +380,7 @@ During tests in autonomous mode, a few issues were spotted:
 - track recovery: when putting the car already outside of the track, the model is rarely able to recover even in close proximity.
 - graphics overfitting: this one is a very interesting lead for augmentation. For report render purposes, different graphics and resolution were tested with the trained model. While the resolution does not change much (because of resizing), the graphics settings influence a lot the performances.
 
-![graphics_fail](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_graphicsfail.gif)
+![graphics_fail](static/images/autonomous_01_graphicsfail.gif)
 
 Since the provided dataset seemed to have been recorded on `Graphics Quality: Fastest`, best performances are obtained when evaluating in the same mode. Apparent failures appear very quickly if you were to use `Graphics Quality: Fanstastic` instead as shown above. Knowing this, while driving the simulator, it would be interesting to record for each cameras the renders in different graphics settings.
 
