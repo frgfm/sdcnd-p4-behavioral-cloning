@@ -132,6 +132,16 @@ tensorboard --logdir=logs --port=6007
 
 and navigate in your browser to http://localhost:6007/.
 
+#### Example with provided model training
+
+Run the training script specifying the selected architecture, the output file and the training hyperparameters:
+
+```bash
+python src/train.py 20 --output ./model.h5 --arch babypilot --lr 5e-4 --resampling 0.5 --dropout 0.3
+```
+
+*Note: the above command will train for 20 epochs the `babypilot` architecture using a starting learning rate of `5e-4`, a dropout rate of `0.3` on the dataset where 50% of the 0° steering samples are removed, and save the checkpoint in `./model.h5`. For further details, please refer to the [Approach](#Approach) section.*
+
 
 
 ### Test
@@ -163,7 +173,22 @@ optional arguments:
 
 Pass the trained model checkpoint to this script, which will run a flask app with your model. Now run your environment build *(Screen resolution: 800 x 600, Graphics Quality: Fastest)*, select a track and click on `Autonomous mode`.
 
+#### Example with the provided model
 
+In order to use the repository's owner checkpoint, you can download it manually from the release's attachment or with command-line:
+
+```bash
+cd sdcnd-p4-behavioral-cloning
+wget https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/model.h5
+```
+
+Then expose the model on a flask application by running the driving script:
+
+```bash
+python src/drive.py ./model.h5
+```
+
+ 
 
 ## Approach
 
@@ -363,7 +388,7 @@ The trained [model](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/release
 
 ![autonomous_run](static/images/autonomous_01_short.gif)
 
-Full-length lap recordings are available in first-person and third-person view in the release attachments:
+Full-length lap recordings in first-person and third-person view are available for download in the release attachments:
 
 - [First Person View](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_fpv.mp4)
 - [Third Person View](https://github.com/frgfm/sdcnd-p4-behavioral-cloning/releases/download/v0.1.0/autonomous_01_tpv.mp4)
